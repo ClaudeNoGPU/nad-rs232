@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nad-rs232"
+version = "0.1.0"
+description = "Async library to control NAD amplifiers (C338/C368/C388) over RS-232 using serialx"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.12"
+dependencies = [
+    "serialx[esphome]>=1.2.0",
+]
+keywords = ["nad", "rs232", "serial", "amplifier", "home-assistant"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Home Automation",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[project.urls]
+Homepage = "https://github.com/CHANGEME/nad-rs232"
+
+[tool.setuptools.packages.find]
+include = ["nad_rs232*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
