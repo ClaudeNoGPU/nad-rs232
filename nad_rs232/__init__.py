@@ -25,7 +25,7 @@ from .protocol import (
 )
 from .state import AmplifierState, SourceInfo
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "BAUD_RATE",
