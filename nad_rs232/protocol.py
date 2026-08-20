@@ -48,7 +48,8 @@ def round_half_db(db: float) -> float:
 
 
 def db_to_percent(db: float) -> float:
-    """Convert a volume in dB to the amplifier's front panel percentage."""
+    """Convert a volume in dB to the amplifier's front panel percentage.
+       Rounded to a whole percent to match the amplifier's front panel display."""
     if db <= MIN_VOLUME_DB:
         return 0.0
     if db >= MAX_VOLUME_DB:
@@ -57,7 +58,7 @@ def db_to_percent(db: float) -> float:
     for (db_lo, pct_lo), (db_hi, pct_hi) in zip(VOLUME_CURVE, VOLUME_CURVE[1:]):
         if db <= db_hi:
             ratio = (db - db_lo) / (db_hi - db_lo)
-            return pct_lo + ratio * (pct_hi - pct_lo)
+            return float(round(pct_lo + ratio * (pct_hi - pct_lo)))
 
     return 100.0  # pragma: no cover - unreachable
 
