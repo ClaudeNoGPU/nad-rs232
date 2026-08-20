@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nad-rs232"
-version = "0.1.0"
+version = "0.1.1"
 description = "Async library to control NAD amplifiers (C338/C368/C388) over RS-232 using serialx"
 readme = "README.md"
 license = { text = "Apache-2.0" }
